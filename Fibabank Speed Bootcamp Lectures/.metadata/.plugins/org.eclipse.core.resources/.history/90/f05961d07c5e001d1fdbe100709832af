@@ -1,0 +1,5 @@
+package com.matnsk.spring.rest;
+
+public class ResourceController {
+
+}

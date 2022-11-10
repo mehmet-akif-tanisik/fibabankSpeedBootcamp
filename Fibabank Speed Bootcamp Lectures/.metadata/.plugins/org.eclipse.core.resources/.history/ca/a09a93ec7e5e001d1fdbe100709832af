@@ -1,0 +1,16 @@
+package com.matnsk.spring.service;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class ResourceController {
+	
+	@GetMapping("/product")
+	public Product getProduct() {
+		Product product = new Product(301,"Cep telefonu",1450);
+		return product;
+	}
+	
+
+}

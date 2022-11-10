@@ -1,0 +1,19 @@
+package com.matnsk.spring.service;
+
+import org.springframework.stereotype.Service;
+
+import com.matnsk.spring.Product;
+
+
+@Service
+public class ProductServiceImpl implements ProductService{
+
+	@Override
+	public Product find(long productId) {
+		
+		Product product = new Product(productId,"Cep telefonu",1450);
+		System.out.println("find çalıştı.");
+		return product;
+	}
+
+}

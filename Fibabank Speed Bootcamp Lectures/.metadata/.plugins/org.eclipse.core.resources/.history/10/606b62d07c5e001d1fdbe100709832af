@@ -1,0 +1,13 @@
+package com.matnsk.spring.rest;
+
+public class Product {
+	
+	private long productID;
+	
+	private String productName;
+	
+	private double salesPrice;
+	
+	
+
+}

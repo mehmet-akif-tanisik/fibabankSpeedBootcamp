@@ -1,0 +1,10 @@
+package com.matnsk.spring.service;
+
+import com.matnsk.spring.Product;
+
+public interface ProductService {
+	
+	  
+	Product find(long productId);
+
+}

@@ -1,0 +1,20 @@
+package com.matnsk.spring.web;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.matnsk.spring.service.Product;
+
+@Controller
+public class ProductController {
+	
+	@GetMapping("/product/get")
+	@ResponseBody
+	public String getProduct() {
+		long productId = 301;
+		Product product = new Product(productId,"Robot süpürge",1450);
+		return "Process has been done succesfully";
+	}
+
+}
