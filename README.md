@@ -20,3 +20,17 @@ Databases:
 inventoryDb —> PostgreSql
 
 shoppingDb —> PostgreSql
+
+##Few Test Cases
+
+
+![alt text](https://i.hizliresim.com/5yzjhld.png)
+
+![alt text](https://i.hizliresim.com/eqk1rvy.png)
+
+![alt text](https://i.hizliresim.com/n1mpc6b.png)
+
+
+
+
+
