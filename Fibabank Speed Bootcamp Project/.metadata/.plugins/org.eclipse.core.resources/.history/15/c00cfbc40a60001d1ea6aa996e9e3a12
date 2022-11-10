@@ -1,0 +1,76 @@
+package com.inventory.business.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.inventory.business.dto.ProductDto;
+import com.inventory.business.service.ProductService;
+import com.inventory.data.entity.Product;
+import com.inventory.data.repository.ProductRepository;
+
+@Service
+public class ProductServiceImpl implements ProductService {
+
+	private ProductRepository productRepository;
+	
+	
+	public ProductServiceImpl(ProductRepository productRepository) {
+		this.productRepository = productRepository;
+	}
+
+	@Override
+	public long create(ProductDto productDto) {
+		Product product = new Product();
+		product.setProductName(productDto.getProductName());
+		product.setSalesPrice(productDto.getSalesPrice());
+		product.setCategory(productDto.getCategory());
+		productRepository.save(product);
+		return product.getProductId();
+	}
+
+	@Override
+	public void update(ProductDto productDto) {
+		Product product = new Product();
+		product.setProductId(productDto.getProductId());
+		product.setProductName(productDto.getProductName());
+		product.setSalesPrice(productDto.getSalesPrice());
+		product.setCategory(productDto.getCategory());
+		productRepository.save(product);
+	}
+
+	@Override
+	public ProductDto find(long productId) {
+			Optional<Product> optional = productRepository.findById(productId);
+			Product product = optional.get();
+			
+			ProductDto productDto = new ProductDto(product);
+			
+			return productDto;
+	}
+
+	@Override
+	public List<ProductDto> findAll() {
+		List<ProductDto> productDtos = new ArrayList<>();
+		Iterable<Product> products = productRepository.findAll();
+		
+		for(Product product: products) {
+			ProductDto productDto = new ProductDto(product);
+			productDtos.add(productDto);
+		}
+		return productDtos;
+	}
+	
+	
+
+	@Override
+	public void delete(long productId) {
+		if(productRepository.existsById(productId)) {
+			productRepository.deleteById(productId);
+		}
+	}
+	
+
+}

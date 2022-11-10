@@ -1,0 +1,25 @@
+package com.matnsk.spring.relation.mvc;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.matnsk.spring.relation.entity.Team;
+
+@Controller
+@RequestMapping("/sports")
+public class TeamController {
+	
+	
+	@GetMapping("/team/insert")
+	@ResponseBody
+	public String insertTeam()
+	{
+		Team teamA = new Team(0,"Kagıthane Spor");
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.shopping.business.dto;
+
+public class CartDto {
+
+}

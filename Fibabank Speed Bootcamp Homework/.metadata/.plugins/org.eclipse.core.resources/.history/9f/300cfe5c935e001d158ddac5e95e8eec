@@ -1,0 +1,25 @@
+package com.matnsk.spring.service;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.matnsk.spring.Employee;
+
+@RestController
+public class EmployeeResource {
+	
+	
+	//Get Method to get single item
+	@GetMapping("/api/employee/{id}")
+	public Employee getEmployee(@PathVariable("id")long employeeId) {
+		
+		Employee employee = new Employee(100,"Mehmet",3000);
+		
+		return employee;
+	}
+	
+	
+	
+
+}

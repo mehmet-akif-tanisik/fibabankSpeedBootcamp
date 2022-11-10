@@ -1,0 +1,18 @@
+package com.inventory.business.dto;
+
+import java.util.List;
+
+public class CategoryDto {
+	
+	private long categoryId;
+	
+	private String categoryName;
+	
+	private double salesPrice;
+	
+	private List<ProductDto> productList;
+	
+	
+	
+
+}

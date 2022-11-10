@@ -1,0 +1,73 @@
+package com.matnsk.spring.business.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.matnsk.spring.business.dto.ProductDto;
+import com.matnsk.spring.data.entity.Product;
+import com.matnsk.spring.data.repository.ProductRepository;
+
+@Service
+public class ProductServiceImpl implements ProductService{
+
+	
+	private ProductRepository productRepository;
+	
+	public ProductServiceImpl(ProductRepository productRepository) {
+		this.productRepository = productRepository;
+	}
+	
+	
+	@Override
+	public long create(ProductDto productDto) {
+		Product product = new Product();
+		product.setProductName(productDto.getProductName());
+		product.setSalesPrice(productDto.getSalesPrice());
+		productRepository.save(product);
+		return product.getProductId();
+	}
+
+	@Override
+	public void update(ProductDto productDto) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public ProductDto find(long productId) {
+		
+		Optional<Product> optional = productRepository.findById(productId);
+		
+		if(optional.isPresent()) {
+			Product product = optional.get();
+			ProductDto productDto = new ProductDto();
+			productDto.setProductName(product.getProductName());
+			productDto.setSalesPrice(product.getSalesPrice());
+			return productDto;
+		}
+		return null;
+	}
+
+	@Override
+	public List<ProductDto> findAll() {
+		List<ProductDto> productDtos = new ArrayList<>();
+		Iterable<Product> products = productRepository.findAll();
+		
+		for(Product product: products) {
+			ProductDto productDto = new ProductDto();
+			productDto.setProductName(product.getProductName());
+			productDto.setSalesPrice(product.getSalesPrice());
+		}
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+
+}

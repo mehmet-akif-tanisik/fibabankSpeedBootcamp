@@ -1,0 +1,121 @@
+package com.shopping.data.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
+public class CartProduct {
+	
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long cartProductId;
+	
+	private int salesQuantity;
+	
+	private long productId;
+	
+	private double salesPrice;
+	
+	private double lineAmount;
+	
+	@ManyToOne
+	@JoinColumn(name= "cart_id")
+	@JsonIgnore
+	private Cart cart;
+
+	public CartProduct() {
+	}
+	
+
+	public CartProduct(long cartProductId, int salesQuantity, long productId, double salesPrice, double lineAmount,
+			Cart cart) {
+		this.cartProductId = cartProductId;
+		this.salesQuantity = salesQuantity;
+		this.productId = productId;
+		this.salesPrice = salesPrice;
+		this.lineAmount = lineAmount;
+		this.cart = cart;
+	}
+	
+	public long getCartId() {
+		return cart.getCartId();
+	}
+
+
+	public long getCartProductId() {
+		return cartProductId;
+	}
+
+	public void setCartProductId(long cartProductId) {
+		this.cartProductId = cartProductId;
+	}
+
+	public int getSalesQuantity() {
+		return salesQuantity;
+	}
+
+	public void setSalesQuantity(int salesQuantity) {
+		this.salesQuantity = salesQuantity;
+	}
+
+	public long getProductId() {
+		return productId;
+	}
+
+	public void setProductId(long productId) {
+		this.productId = productId;
+	}
+
+	public double getSalesPrice() {
+		return salesPrice;
+	}
+
+	public void setSalesPrice(double salesPrice) {
+		this.salesPrice = salesPrice;
+	}
+
+	public double getLineAmount() {
+		return lineAmount;
+	}
+
+	public void setLineAmount(double lineAmount) {
+		this.lineAmount = lineAmount;
+	}
+
+	public Cart getCart() {
+		return cart;
+	}
+
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}
+
+	
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

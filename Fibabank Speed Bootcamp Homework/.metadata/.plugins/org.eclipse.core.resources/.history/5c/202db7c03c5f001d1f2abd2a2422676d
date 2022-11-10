@@ -1,0 +1,38 @@
+package com.matnsk.spring.mvc;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.matnsk.spring.entity.Employee;
+import com.matnsk.spring.relation.entity.Player;
+import com.matnsk.spring.repository.EmployeeRepository;
+
+@Controller
+@RequestMapping("/company")
+public class EmployeeController {
+
+	@Autowired
+	private EmployeeRepository employeeRepository;
+	
+	@GetMapping("/employees/byteam")
+	@ResponseBody
+	public String getEmployeesByDepartmentId()
+	{
+		long departmentId = 1;
+		List<Employee> employees = employeeRepository.findAllByDepartmentId(departmentId);
+		int count = 0;
+		for(Employee employee: employees) {
+			System.out.println(employee.getEmployeeId()+" "+
+					employee.getEmployeeName() + " " +
+					employee.getMonthlySalary());
+			count++;
+		}
+		
+		return "Total emloyee number in this department: " + count;
+	}
+}

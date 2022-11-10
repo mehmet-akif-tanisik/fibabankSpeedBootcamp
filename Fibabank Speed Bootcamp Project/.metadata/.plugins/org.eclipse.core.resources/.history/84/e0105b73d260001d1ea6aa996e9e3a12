@@ -1,0 +1,19 @@
+package com.commerce.business.service.impl;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.commerce.business.model.CategoryModel;
+import com.commerce.business.service.CategoryService;
+
+@Service
+public class CategoryServiceImpl implements CategoryService{
+
+	@Override
+	public List<CategoryModel> findAllCategories() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

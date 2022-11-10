@@ -1,0 +1,7 @@
+package com.inventory.business.service.mapping;
+
+
+@Service
+public class ProductMappingService {
+
+}

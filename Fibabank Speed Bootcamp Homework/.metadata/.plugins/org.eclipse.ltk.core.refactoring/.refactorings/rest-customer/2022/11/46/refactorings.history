@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;productList&apos; in &apos;com.matnsk.spring.service.CustomerServiceImpl.findAll()&apos; to &apos;customerList&apos;&#x0D;&#x0A;- Original project: &apos;rest-customer&apos;&#x0D;&#x0A;- Original element: &apos;com.matnsk.spring.service.CustomerServiceImpl.findAll().productList&apos;&#x0D;&#x0A;- Renamed element: &apos;productList&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;productList&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.matnsk.spring.service{CustomerServiceImpl.java[CustomerServiceImpl~findAll@productList!385!431!400!410!QList\&lt;QCustomer;&gt;;!0!false" name="customerList" references="true" stamp="1667842869932" version="1.0"/>
+</session>

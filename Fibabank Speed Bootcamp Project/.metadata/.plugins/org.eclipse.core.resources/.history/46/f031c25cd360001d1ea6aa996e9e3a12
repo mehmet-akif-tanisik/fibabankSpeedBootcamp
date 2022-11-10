@@ -1,0 +1,20 @@
+package com.commerce.presentation.rest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.commerce.business.service.CategoryService;
+
+@RestController
+@RequestMapping("/commerce/inventory")
+public class CategoryResource {
+	
+	@Autowired
+	private CategoryService categoryService;
+	
+	public CategoryResource(CategoryService categoryService) {
+		this.categoryService = categoryService;
+	}
+
+}

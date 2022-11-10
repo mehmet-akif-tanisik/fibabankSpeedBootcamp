@@ -1,0 +1,16 @@
+package com.inventory.business.service.impl;
+
+import java.util.List;
+
+import com.inventory.business.dto.CategoryDto;
+import com.inventory.business.service.CategoryService;
+
+public class CategoryServiceImpl implements CategoryService{
+
+	@Override
+	public List<CategoryDto> findAllCategories() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

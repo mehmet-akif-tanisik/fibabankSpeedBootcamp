@@ -1,0 +1,73 @@
+package com.inventory.business.service.impl;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.inventory.business.dto.ProductDto;
+import com.inventory.business.service.ProductService;
+import com.inventory.data.entity.Product;
+import com.inventory.data.repository.ProductRepository;
+
+@Service
+public class ProductServiceImpl implements ProductService {
+
+	private ProductRepository productRepository;
+	
+	
+	public ProductServiceImpl(ProductRepository productRepository) {
+		this.productRepository = productRepository;
+	}
+
+	@Override
+	public long create(ProductDto productDto) {
+		Product product = new Product();
+		product.setProductName(productDto.getProductName());
+		product.setSalesPrice(productDto.getSalesPrice());
+		product.setCategory(productDto.getCategory());
+		productRepository.save(product);
+		return product.getProductId();
+	}
+
+	@Override
+	public void update(ProductDto productDto) {
+		Product product = new Product();
+		product.setProductId(productDto.getProductId());
+		product.setProductName(productDto.getProductName());
+		product.setSalesPrice(productDto.getSalesPrice());
+		product.setCategory(productDto.getCategory());
+		productRepository.save(product);
+	}
+
+	@Override
+	public ProductDto find(long productId) {
+			Optional<Product> optional = productRepository.findById(productId);
+			Product product = optional.get();
+			
+			ProductDto productDto = new ProductDto(product);
+			
+			return productDto;
+	}
+
+	@Override
+	public List<ProductDto> findAll() {
+		Iterable<Product> products = productRepository.findAll();
+		
+		
+		 return products.stream()
+	                .map(this::convertToCategoryToCategoryDTO).collect(Collectors.toList());
+	}
+
+	@Override
+	public void delete(long productId) {
+		if(productRepository.existsById(productId)) {
+			productRepository.deleteById(productId);
+		}
+	}
+	
+
+}

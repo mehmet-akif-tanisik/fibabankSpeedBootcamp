@@ -1,0 +1,23 @@
+package com.shopping.presentation.rest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.shopping.business.service.CartService;
+
+@RestController
+@RequestMapping("/shopping")
+public class CartResource {
+
+	
+	@Autowired
+	private CartService cartService;
+	
+	public CartResource(CartService cartService) {
+		this.cartService = cartService;
+	}
+	
+	
+	
+}

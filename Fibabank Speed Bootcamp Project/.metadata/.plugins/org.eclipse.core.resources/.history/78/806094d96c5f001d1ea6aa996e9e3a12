@@ -1,0 +1,5 @@
+package com.inventory.presentation.rest;
+
+public class CategoryResource {
+
+}

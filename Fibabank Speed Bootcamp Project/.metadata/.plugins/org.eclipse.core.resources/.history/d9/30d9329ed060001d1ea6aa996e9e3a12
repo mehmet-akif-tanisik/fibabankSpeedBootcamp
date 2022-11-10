@@ -1,0 +1,14 @@
+package com.commerce.business.service;
+
+import java.util.List;
+
+import com.commerce.business.model.ProductModel;
+import com.commerce.data.component.dto.ProductDto;
+
+public interface ProductService {
+
+	public ProductModel findProductById(long productId);
+	
+	List<ProductDto> findAllProductsByCategoryId(long categoryId);
+	
+}

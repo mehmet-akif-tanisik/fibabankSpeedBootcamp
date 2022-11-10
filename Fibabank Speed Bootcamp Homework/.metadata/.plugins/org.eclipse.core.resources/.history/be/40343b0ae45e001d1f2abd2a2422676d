@@ -1,0 +1,9 @@
+package com.matnsk.spring.relation;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.matnsk.spring.relation.Team;
+
+public interface TeamRepository extends CrudRepository<Team, Long>{
+
+}

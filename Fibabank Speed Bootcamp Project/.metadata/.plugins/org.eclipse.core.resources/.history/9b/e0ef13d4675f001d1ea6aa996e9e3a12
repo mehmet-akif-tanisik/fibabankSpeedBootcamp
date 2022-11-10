@@ -1,0 +1,15 @@
+package com.inventory.data.repository;
+
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+import com.inventory.data.entity.Product;
+
+public interface ProductRepository extends CrudRepository<Product, Long>{
+	
+	List<Product> findAllProductsByCategoryId();
+	
+	Product findProductById(long productId);
+	
+	
+}

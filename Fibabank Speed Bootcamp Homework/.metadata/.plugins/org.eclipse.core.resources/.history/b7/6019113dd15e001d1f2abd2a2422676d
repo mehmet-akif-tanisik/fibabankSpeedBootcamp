@@ -1,0 +1,24 @@
+package com.matnsk.spring;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class ProductController {
+	
+	//@Autowired
+	private ProductRepository productRepository;
+	
+	public ProductController(ProductRepository productRepository) {
+		this.productRepository = productRepository;
+	}
+	
+	@GetMapping("/product")
+	public String insertProduct()
+	{
+		Product product = new Product(0,"Cep telefonu",1430);
+		productRepository.save(product);
+		
+		return "Sokuldu: " + product.getProductId();
+	}
+}

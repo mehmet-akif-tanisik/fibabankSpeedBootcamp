@@ -1,0 +1,41 @@
+package com.inventory.presentation.rest;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import com.inventory.business.dto.ProductDto;
+import com.inventory.business.service.ProductService;
+
+@RestController
+@RequestMapping("/inventory")
+public class ProductResource {
+
+	@Autowired
+	private ProductService productService;
+	
+	
+	public ProductResource(ProductService productService) {
+		this.productService = productService;
+	}
+	
+	@GetMapping("/product/{id}")
+	public ProductDto getProduct(@PathVariable("id")long productId) {
+		ProductDto product = productService.findProductById(productId);
+		return product;
+	}
+	
+	
+	@GetMapping("/products/{categoryId}")
+	public List<ProductDto> getProducts(@PathVariable("categoryId")long categoryId) {
+		
+		List<ProductDto> productList = productService.findAllProductsByCategoryId(categoryId);
+		
+		return productList;
+	}
+	 
+	
+	
+}

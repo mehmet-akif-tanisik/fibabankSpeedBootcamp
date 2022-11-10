@@ -1,0 +1,5 @@
+package com.matnsk.spring.business.dto;
+
+public class ProductDto {
+
+}

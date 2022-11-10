@@ -1,0 +1,11 @@
+package com.inventory.business.service;
+
+
+
+public interface CategoryService{
+	
+//List<CategoryDto> findAll();
+
+//	List<CategoryDto> findAllCategories();
+	
+}

@@ -1,0 +1,13 @@
+package com.commerce.business.service.impl;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class ProductServiceImpl {
+
+	
+	
+	@Autowired
+	private ProductComponent productComponent;
+	
+}

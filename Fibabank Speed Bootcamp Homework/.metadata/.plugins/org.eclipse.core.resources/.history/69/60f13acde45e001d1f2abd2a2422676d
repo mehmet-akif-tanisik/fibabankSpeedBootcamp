@@ -1,0 +1,5 @@
+package com.matnsk.spring.relation.mvc;
+
+public class TeamController {
+
+}

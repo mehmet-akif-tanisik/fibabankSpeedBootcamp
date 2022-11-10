@@ -1,0 +1,8 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="com.matnsk.spring.Employee"><rhs name\="com.matnsk.spring.Employee"/></lhs><lhs name\="org.springframework.web.client.RestOperations"><rhs name\="org.springframework.web.client.RestTemplate"/></lhs><lhs name\="org.springframework.http.client.support.InterceptingHttpAccessor"><rhs name\="org.springframework.web.client.RestTemplate"/></lhs><lhs name\="org.springframework.http.client.support.HttpAccessor"><rhs name\="org.springframework.web.client.RestTemplate"/></lhs><lhs name\="org.springframework.web.client.RestTemplate"><rhs name\="org.springframework.web.client.RestTemplate"/></lhs><lhs name\="com.matnsk.spring.Product"><rhs name\="com.matnsk.spring.Product"/></lhs><lhs name\="java.lang.Enum"><rhs name\="javax.persistence.FetchType"/></lhs><lhs name\="java.lang.constant.Constable"><rhs name\="javax.persistence.FetchType"/></lhs><lhs name\="com.matnsk.spring.relation.entity.Team"><rhs name\="com.matnsk.spring.relation.entity.Team"/></lhs></history>
+content_assist_number_of_computers=15
+eclipse.preferences.version=1
+org.eclipse.jdt.ui.formatterprofiles.version=22
+spelling_locale_initialized=true
+typefilter_migrated_2=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

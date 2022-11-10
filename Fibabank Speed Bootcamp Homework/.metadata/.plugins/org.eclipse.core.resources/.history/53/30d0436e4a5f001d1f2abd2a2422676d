@@ -1,0 +1,17 @@
+package com.matnsk.spring.presentation.rest;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import com.matnsk.spring.business.service.ProductService;
+
+@RestController
+public class ProductResource {
+	
+	
+	private ProductService productService;
+	
+	public ProductResource(ProductService productService) {
+		this.productService = productService;
+	}
+
+}

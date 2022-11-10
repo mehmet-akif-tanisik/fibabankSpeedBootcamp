@@ -1,0 +1,22 @@
+package com.inventory.data.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+
+import com.inventory.business.dto.CategoryDto;
+import com.inventory.data.entity.Product;
+
+public interface ProductRepository extends CrudRepository<Product, Long>{
+	
+	Product find(long productId);
+	
+//	@Query("select p from Product p where p.category.categoryId = :categoryId")
+//	List<Product> findAllProductsByCategoryId(long categoryId);
+//	
+//	@Query("select a from Product a where a.productId = :productId")
+//	Product findProductById(long productId);
+	
+	
+}

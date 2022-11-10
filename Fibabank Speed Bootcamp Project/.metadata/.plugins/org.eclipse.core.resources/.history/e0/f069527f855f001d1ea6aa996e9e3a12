@@ -1,0 +1,86 @@
+package com.inventory.business.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.inventory.business.dto.ProductDto;
+import com.inventory.business.service.ProductService;
+import com.inventory.data.entity.Product;
+import com.inventory.data.repository.ProductRepository;
+
+@Service
+public class ProductServiceImpl implements ProductService {
+
+	private ProductRepository productRepository;
+	
+	public ProductServiceImpl(ProductRepository productRepository) {
+		this.productRepository = productRepository;
+	}
+	
+	
+	@Override
+	public ProductDto find(long productId) {
+		
+		Optional<Product> optional = productRepository.findById(productId);
+		
+		if(optional.isPresent()) {
+			Product product = optional.get();
+			ProductDto productDto = new ProductDto();
+			productDto.setProductId(product.getProductId());
+			productDto.setProductName(product.getProductName());
+			productDto.setSalesPrice(product.getSalesPrice());
+			productDto.setCategory(product.getCategory());
+			return productDto;
+		}
+		return null;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//	@Override
+//	public List<ProductDto> findAllProductsByCategoryId(long categoryDtoId) {
+//		List<ProductDto> productDtos = new ArrayList<>();
+////		Iterable<Product> products = productRepository.findById(categoryDtoId);
+////		
+////		for(Product product: products) {
+////			ProductDto productDto = new ProductDto();
+////			productDto.setProductName(product.getProductName());
+////			productDto.setSalesPrice(product.getSalesPrice());
+////			productDtos.add(productDto);
+////		}
+//		return productDtos;
+//	}
+//	
+//
+//
+//	@Override
+//	public ProductDto findProductById(long productDtoId) {
+//		Optional<Product> optional = productRepository.findById(productDtoId);
+//		
+//		if(optional.isPresent()) {
+//			Product product = optional.get();
+//			ProductDto productDto = new ProductDto();
+//			productDto.setProductName(product.getProductName());
+//			productDto.setSalesPrice(product.getSalesPrice());
+//			return productDto;
+//		}
+//		return null;
+//	}
+//
+
+
+	
+}

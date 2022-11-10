@@ -1,0 +1,30 @@
+package com.commerce.business.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.commerce.business.model.CategoryModel;
+import com.commerce.business.service.CategoryService;
+import com.commerce.data.component.CategoryComponent;
+
+@Service
+public class CategoryServiceImpl implements CategoryService{
+	
+	
+	@Autowired
+	private CategoryComponent categoryComponent;
+	
+	public CategoryServiceImpl(CategoryComponent categoryComponent) {
+		this.categoryComponent = categoryComponent;
+	}
+	
+
+	@Override
+	public List<CategoryModel> findAllCategories() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

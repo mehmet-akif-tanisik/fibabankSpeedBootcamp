@@ -1,0 +1,10 @@
+spring.datasource.url=jdbc:postgresql://localhost:5432/inventorydb
+spring.datasource.username=postgres
+spring.datasource.password=admin
+spring.datasource.url=jdbc:postgresql://localhost:5432/shoppingdb
+spring.datasource.username=postgres
+spring.datasource.password=admin
+spring.jpa.hibernate.ddl-auto = update
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+server.port=8080

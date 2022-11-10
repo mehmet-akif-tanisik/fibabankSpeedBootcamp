@@ -1,0 +1,18 @@
+package com.matnsk.spring.relation.repository;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.matnsk.spring.entity.Product;
+import com.matnsk.spring.relation.entity.Team;
+
+public interface TeamRepository extends CrudRepository<Team, Long>{
+
+	
+	
+	
+	
+	
+	
+}

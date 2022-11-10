@@ -1,0 +1,21 @@
+package com.matnsk.spring.web;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class EmployeeController {
+	
+	@GetMapping("/employee/get")
+	@ResponseBody
+	public String getEmployee() {
+		long employeeId = 999;
+		String url = "http://localhost:8080/api/employee" + employeeId;
+	}
+	
+	
+	
+	
+
+}

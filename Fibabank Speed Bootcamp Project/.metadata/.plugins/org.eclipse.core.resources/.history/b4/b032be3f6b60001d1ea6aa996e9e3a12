@@ -1,0 +1,21 @@
+package com.commerce.client;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.commerce.component.ProductComponent;
+
+@Controller
+public class CommerceClient {
+
+	
+	@Autowired
+	private ProductComponent productComponent;
+	
+	public CommerceClient(ProductClient productClient) {
+		this.productClient = productClient;
+	}
+	
+	
+	
+}

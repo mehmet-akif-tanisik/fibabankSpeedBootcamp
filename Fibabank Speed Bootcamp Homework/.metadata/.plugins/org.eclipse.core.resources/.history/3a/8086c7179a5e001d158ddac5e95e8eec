@@ -1,0 +1,60 @@
+package com.matnsk.spring.web;
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.client.RestTemplate;
+
+import com.matnsk.spring.Employee;
+
+@Controller
+public class EmployeeController {
+	
+	@GetMapping("/employee/get")
+	@ResponseBody
+	public String getEmployee() {
+		long employeeId = 999;
+		String url = "http://localhost:8080/api/employee/" + employeeId;
+		
+		RestTemplate restTemplate = new RestTemplate();
+		Employee employee = restTemplate.getForObject(url, Employee.class);
+		
+		System.out.println("Employee: " + employee.getEmployeeName() +"" + employee.getEmployeeId());
+		return "Get succesfully";
+	}
+	
+	@GetMapping("/employees/get")
+	@ResponseBody
+	public String getEmployees() {
+		String url = "http://localhost:8080/api/employees/";
+		
+		
+		return "Get employees succesfully done.";
+	}
+	
+	
+	
+	
+	@GetMapping("/employee/post")
+	@ResponseBody
+	public String postProduct() {
+		Employee employee = new Employee(222,"Harun",999);
+		String url = "http://localhost:8080/api/employee";
+		
+		RestTemplate restTemplate = new RestTemplate();
+		Employee result = restTemplate.postForObject(url, employee, Employee.class);
+		
+		return "Post Succesfully " + result.getEmployeeId();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+
+}

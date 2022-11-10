@@ -1,0 +1,35 @@
+package com.matnsk.spring.relation;
+
+import java.util.List;
+
+public class Team {
+	
+	private long teamId;
+	private String teamName;
+	private List<Player> player;
+	
+	public Team() {}
+	
+	public long getTeamId() {
+		return teamId;
+	}
+	public void setTeamId(long teamId) {
+		this.teamId = teamId;
+	}
+	public String getTeamName() {
+		return teamName;
+	}
+	public void setTeamName(String teamName) {
+		this.teamName = teamName;
+	}
+
+	public List<Player> getPlayer() {
+		return player;
+	}
+
+	public void setPlayer(List<Player> player) {
+		this.player = player;
+	}
+	
+
+}

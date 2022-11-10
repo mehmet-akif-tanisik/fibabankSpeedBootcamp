@@ -1,0 +1,5 @@
+package com.matnsk.spring.service;
+
+public class CustomerService {
+
+}

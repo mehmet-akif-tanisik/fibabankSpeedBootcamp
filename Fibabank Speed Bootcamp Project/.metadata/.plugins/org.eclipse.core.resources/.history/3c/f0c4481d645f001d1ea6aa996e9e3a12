@@ -1,0 +1,5 @@
+package com.inventory.business.service;
+
+public interface ProductService {
+
+}

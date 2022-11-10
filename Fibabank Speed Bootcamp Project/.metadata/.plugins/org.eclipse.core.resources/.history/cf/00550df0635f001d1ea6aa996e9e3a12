@@ -1,0 +1,12 @@
+package com.inventory.business.service;
+
+import java.util.List;
+
+import com.inventory.business.dto.ProductDto;
+
+public interface CategoryService {
+
+	List<ProductDto> findAllCategories();
+	
+	
+}

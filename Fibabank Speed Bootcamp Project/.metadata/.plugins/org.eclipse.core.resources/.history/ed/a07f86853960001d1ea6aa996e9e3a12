@@ -1,0 +1,57 @@
+package com.shopping.data.entity;
+
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.inventory.data.entity.Product;
+
+@Entity
+public class Cart {
+	
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long cartId;
+	
+	private String customerName;
+	
+	private double totalAmount;
+	
+	private boolean cartStatus;
+	
+	@OneToMany(mappedBy = "cartProduct",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+	private List<CartProduct> cartProductList;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

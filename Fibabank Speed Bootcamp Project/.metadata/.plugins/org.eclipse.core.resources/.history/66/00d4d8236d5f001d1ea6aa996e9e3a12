@@ -1,0 +1,18 @@
+package com.inventory.presentation.rest;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.inventory.business.service.CategoryService;
+
+@RestController
+@RequestMapping("/inventory")
+public class CategoryResource {
+	
+	private CategoryService categoryService;
+	
+	public CategoryResource(CategoryService categoryService) {
+		this.categoryService = categoryService;
+	}
+
+}

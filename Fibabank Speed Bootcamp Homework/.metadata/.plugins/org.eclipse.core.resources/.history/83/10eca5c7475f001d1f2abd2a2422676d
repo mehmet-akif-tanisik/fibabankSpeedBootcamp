@@ -1,0 +1,45 @@
+package com.matnsk.spring.business.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.matnsk.spring.business.dto.ProductDto;
+import com.matnsk.spring.data.repository.ProductRepository;
+
+@Service
+public class ProductServiceImpl implements ProductService{
+
+	
+	private ProductRepository productRepository;
+	
+	public ProductServiceImpl(ProductRepository productRepository) {
+		this.productRepository = productRepository;
+	}
+	
+	
+	@Override
+	public long create(ProductDto productDto) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void update(ProductDto productDto) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public ProductDto find(long productId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ProductDto> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

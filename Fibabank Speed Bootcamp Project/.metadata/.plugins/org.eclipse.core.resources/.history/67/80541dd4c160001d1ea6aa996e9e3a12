@@ -1,0 +1,8 @@
+package com.commerce.component;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class CategoryComponent {
+ 
+}

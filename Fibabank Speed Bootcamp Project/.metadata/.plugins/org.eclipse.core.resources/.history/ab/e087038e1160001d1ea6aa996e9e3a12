@@ -1,0 +1,72 @@
+package com.inventory.business.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.inventory.business.dto.ProductDto;
+import com.inventory.business.service.ProductService;
+import com.inventory.data.entity.Product;
+import com.inventory.data.repository.ProductRepository;
+
+@Service
+public class ProductServiceImpl implements ProductService {
+
+	private ProductRepository productRepository;
+	
+	
+	public ProductServiceImpl(ProductRepository productRepository) {
+		this.productRepository = productRepository;
+	}
+
+	
+
+	@Override
+	public ProductDto find(long productId) {
+		
+		Optional<Product> optional = productRepository.findById(productId);
+		Product product = optional.get();
+		
+		ProductDto productDto = new ProductDto(product);
+		return productDto;
+	}
+
+	@Override
+	public List<ProductDto> findAll() {
+		List<ProductDto> productDtos = new ArrayList<>();
+		Iterable<Product> products = productRepository.findAll();
+		
+		for(Product product: products) {
+			ProductDto productDto = new ProductDto(product);
+			productDtos.add(productDto);
+		}
+		return productDtos;
+	}
+
+
+
+	@Override
+	public List<ProductDto> findAllProductsByCategoryId(long categoryId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	@Override
+	public ProductDto findProductById(long productId) {
+		Optional<Product> optional = productRepository.findById(productId);
+		Product product = optional.get();
+		
+		ProductDto productDto = new ProductDto(product);
+		return productDto;
+	}
+	
+	
+
+	
+	
+
+}

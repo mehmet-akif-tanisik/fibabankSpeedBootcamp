@@ -1,0 +1,45 @@
+package com.matnsk.spring.mvc;
+
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.matnsk.spring.entity.Department;
+import com.matnsk.spring.entity.Employee;
+import com.matnsk.spring.repository.DepartmentRepository;
+
+@Controller
+@RequestMapping("/company")
+public class DepartmentController {
+
+	
+	private DepartmentRepository departmentRepository;
+	
+	@GetMapping("/department/insert")
+	@ResponseBody
+	public String insertDepartment()
+	{
+		Department departmentIT = new Department(0,"IT Department");
+		departmentIT.setEmployeeList(new ArrayList<>());
+		
+		Employee employee1 = new Employee(0,"Harun Kiraz",54.22);
+		employee1.setDepartment(departmentIT);
+		departmentIT.getEmployeeList().add(employee1);
+		
+		Employee employee2 = new Employee(0,"Cem Demir",54.22);
+		employee2.setDepartment(departmentIT);
+		departmentIT.getEmployeeList().add(employee2);
+		
+	
+		
+		departmentRepository.save(departmentIT);
+		
+		return "Added department: " + departmentIT.getDepartmentId();
+		
+		
+	}
+	
+}

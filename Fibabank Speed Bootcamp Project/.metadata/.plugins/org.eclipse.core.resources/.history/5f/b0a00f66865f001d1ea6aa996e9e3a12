@@ -1,0 +1,18 @@
+package com.inventory.business.service;
+
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.inventory.business.dto.ProductDto;
+
+public interface ProductService extends CrudRepository<ProductDto, Long>{
+
+	
+	
+	
+//	List<ProductDto> findAllProductsByCategoryId(long categoryDtoId);
+//	
+//	ProductDto findProductById(long productDtoId);s
+	
+}

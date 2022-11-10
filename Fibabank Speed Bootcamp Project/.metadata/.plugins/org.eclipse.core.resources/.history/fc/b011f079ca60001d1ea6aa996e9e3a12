@@ -1,0 +1,10 @@
+package com.commerce.business.service;
+
+import com.commerce.business.dto.ProductDto;
+
+public interface ProductService {
+
+	ProductDto findProductById(long productId);
+	
+	
+}

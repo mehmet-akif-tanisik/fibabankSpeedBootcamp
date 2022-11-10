@@ -1,0 +1,5 @@
+package com.commerce.business.service.impl;
+
+public class CategoryServiceImpl {
+
+}

@@ -1,0 +1,5 @@
+package com.inventory.data.repository;
+
+public interface ProductRepository {
+
+}

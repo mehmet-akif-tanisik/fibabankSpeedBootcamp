@@ -1,0 +1,44 @@
+package com.inventory.business.service.impl;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.inventory.business.dto.CategoryDto;
+import com.inventory.business.dto.ProductDto;
+import com.inventory.business.service.CategoryService;
+import com.inventory.data.entity.Product;
+
+
+@Service
+public class CategoryServiceImpl implements CategoryService{
+
+	@Override
+	public List<CategoryDto> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	public List<CategoryDto> findAll() {
+		List<CategoryDto> productDtos = new ArrayList<>();
+		Iterable<Category> products = productRepository.findAll();
+		
+		for(Product product: products) {
+			ProductDto productDto = new ProductDto();
+			productDto.setProductName(product.getProductName());
+			productDto.setSalesPrice(product.getSalesPrice());
+			productDtos.add(productDto);
+		}
+		
+		return productDtos;
+	}
+
+
+
+
+}
+
+

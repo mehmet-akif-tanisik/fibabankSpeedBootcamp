@@ -1,0 +1,19 @@
+package com.shopping.business.dto;
+
+public class CartProductDto {
+	
+	
+private long cartProductId;
+	
+	private int salesQuantity;
+	
+	private long productId;
+	
+	private double salesPrice;
+	
+	private double lineAmount;
+	
+	private long cartId;
+	
+
+}

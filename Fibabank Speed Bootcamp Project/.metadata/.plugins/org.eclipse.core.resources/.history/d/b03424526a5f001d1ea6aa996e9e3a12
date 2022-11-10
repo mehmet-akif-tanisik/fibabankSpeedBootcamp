@@ -1,0 +1,54 @@
+package com.inventory.business.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.inventory.business.dto.CategoryDto;
+import com.inventory.business.dto.ProductDto;
+import com.inventory.business.service.CategoryService;
+import com.inventory.data.entity.Category;
+import com.inventory.data.repository.CategoryRepository;
+
+public class CategoryServiceImpl implements CategoryService{
+
+	private CategoryRepository categoryRepository;
+	
+	@Override
+	public List<CategoryDto> findAllCategories() {
+		List<CategoryDto> categoryDtos = new ArrayList<>();
+		Iterable<Category> categories = categoryRepository.findAllCategories();
+		
+		for(Category category: categories) {
+			CategoryDto categoryDto = new CategoryDto();
+			categoryDto.set
+			
+			
+			
+			
+			productDto.setProductName(category.getProductName());
+			productDto.setSalesPrice(category.getSalesPrice());
+			productDtos.add(productDto);
+		}
+		
+		return categories;
+	}
+
+	/*
+	 @Override
+	public List<ProductDto> findAllProductsByCategoryId(long categoryDtoId) {
+		List<ProductDto> productDtos = new ArrayList<>();
+		Iterable<Product> products = productRepository.findAllProductsByCategoryId(categoryDtoId);
+		
+		for(Product product: products) {
+			ProductDto productDto = new ProductDto();
+			productDto.setProductName(product.getProductName());
+			productDto.setSalesPrice(product.getSalesPrice());
+			productDtos.add(productDto);
+		}
+		return productDtos;
+	}
+	 */
+
+}
+
+

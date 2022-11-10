@@ -1,0 +1,7 @@
+package com.commerce.business.service.impl;
+
+
+@Service
+public class ProductServiceImpl {
+
+}

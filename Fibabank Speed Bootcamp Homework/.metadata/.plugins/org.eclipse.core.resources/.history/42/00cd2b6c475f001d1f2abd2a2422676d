@@ -1,0 +1,5 @@
+package com.matnsk.spring.business.service;
+
+public class ProductServiceImpl {
+
+}

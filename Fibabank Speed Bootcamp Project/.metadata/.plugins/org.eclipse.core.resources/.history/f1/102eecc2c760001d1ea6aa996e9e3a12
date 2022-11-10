@@ -1,0 +1,20 @@
+package com.commerce.business.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.commerce.data.component.ProductComponent;
+
+@Service
+public class ProductServiceImpl {
+
+	
+	
+	@Autowired
+	private ProductComponent productComponent;
+	
+	public ProductServiceImpl(ProductComponent productComponent) {
+		this.productComponent = productComponent;
+	}
+	
+}

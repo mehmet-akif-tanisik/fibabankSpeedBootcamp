@@ -1,0 +1,22 @@
+package com.matnsk.spring;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class ProductController {
+	
+	//@Autowired
+	private ProductRepository productRepository;
+	
+	public ProductController(ProductRepository productRepository) {
+		this.productRepository = productRepository;
+	}
+	
+	public String insertProduct()
+	{
+		Product product = new Product(0,"Cep telefonu",1430);
+		
+		return "Sokuldu: " + product.getProductId();
+	}
+}

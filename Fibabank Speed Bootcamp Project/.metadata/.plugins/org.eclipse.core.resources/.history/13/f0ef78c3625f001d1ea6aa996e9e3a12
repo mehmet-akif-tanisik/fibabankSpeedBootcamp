@@ -1,0 +1,68 @@
+package com.inventory.business.dto;
+
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.inventory.data.entity.Product;
+
+public class CategoryDto {
+	
+	private long productId;
+	
+	private String productName;
+	
+	private double salesPrice;
+	
+	private List<Product> product;
+	
+	
+	public CategoryDto() {}
+
+
+	public long getProductId() {
+		return productId;
+	}
+
+
+	public void setProductId(long productId) {
+		this.productId = productId;
+	}
+
+
+	public String getProductName() {
+		return productName;
+	}
+
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+
+	public double getSalesPrice() {
+		return salesPrice;
+	}
+
+
+	public void setSalesPrice(double salesPrice) {
+		this.salesPrice = salesPrice;
+	}
+
+
+	public List<Product> getProduct() {
+		return product;
+	}
+
+
+	public void setProduct(List<Product> product) {
+		this.product = product;
+	}
+
+}

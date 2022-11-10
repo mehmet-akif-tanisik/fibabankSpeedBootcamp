@@ -1,0 +1,31 @@
+package com.shopping.data.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
+public class CartProduct {
+	
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long cartProductId;
+	
+	private int salesQuantity;
+	
+	private long productId;
+	
+	private double salesPrice;
+	
+	private double lineAmount;
+	
+	@ManyToOne
+	@JoinColumn(name= "cart_product_id")
+	@JsonIgnore
+	private CartProduct cartProduct;
+
+}

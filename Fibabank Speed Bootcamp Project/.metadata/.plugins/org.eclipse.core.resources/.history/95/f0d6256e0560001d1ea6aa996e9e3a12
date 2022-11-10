@@ -1,0 +1,55 @@
+package com.inventory.business.dto;
+
+import java.util.List;
+
+import com.inventory.data.entity.Category;
+import com.inventory.data.entity.Product;
+
+
+
+public class CategoryDto {
+	
+	private long categoryId;
+	
+	private String categoryName;
+	
+	private List<Product> productList;
+	
+	
+	public CategoryDto(Category entity) {
+		this.categoryId = entity.getCategoryId();
+		this.categoryName = entity.getCategoryName();
+		this.productList = entity.getProductList();
+	}
+
+	public CategoryDto(long categoryId, String categoryName) {
+		this.categoryId = categoryId;
+		this.categoryName = categoryName;
+	}
+
+	public long getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(long categoryId) {
+		this.categoryId = categoryId;
+	}
+
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+
+	public List<ProductDto> getProductList() {
+		return productList;
+	}
+
+	public void setProductList(List<ProductDto> list) {
+		this.productList = list;
+	}
+	
+
+}

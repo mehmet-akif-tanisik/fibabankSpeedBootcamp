@@ -1,0 +1,17 @@
+package com.commerce.client;
+
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
+
+@Component
+public class ProductClient {
+	
+	
+	public ProductDto findProductById(long productId) {
+		String url = "http://localhost:8081/inventory/product" + productId;
+		RestTemplate restTemplate = new RestTemplate();
+		ProductDto productDto = restTemplate.getForObject(url, ProductDto.class);
+		return productDto;
+	}
+
+}

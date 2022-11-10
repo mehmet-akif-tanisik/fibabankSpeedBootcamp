@@ -1,0 +1,14 @@
+package com.inventory.data.repository;
+
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.inventory.business.dto.CategoryDto;
+import com.inventory.data.entity.Category;
+
+public interface CategoryRepository extends CrudRepository<Category, Long> {
+	
+	Category find(long categoryId);
+	
+}

@@ -1,0 +1,21 @@
+package com.inventory;
+
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+public class Product {
+	
+	private long productId;
+	
+	private String productName;
+	
+	private double salesPrice;
+	
+	
+	@ManyToOne
+	@JoinColumn(name = "category_id")
+	private Category category;
+	
+	public Product() {}
+
+}

@@ -1,0 +1,44 @@
+package com.commerce.business.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.commerce.business.dto.ProductDto;
+import com.commerce.business.service.ProductService;
+import com.commerce.data.component.ProductComponent;
+
+@Service
+public class ProductServiceImpl implements ProductService{
+
+	@Autowired
+	private ProductComponent productComponent;
+	
+	public ProductServiceImpl(ProductComponent productComponent) {
+		this.productComponent = productComponent;
+	}
+	
+	
+	
+	public ProductDto findProductById(long productId) {
+		
+		ProductDto productDto = productComponent.findProductById(productId);
+		
+		return productDto;
+	}
+	
+//	public List<ProductDto> findAllProductsByCategoryId(long categoryId){
+//		String url = "http://localhost:8081/inventory/products/" + categoryId;
+//		RestTemplate restTemplate = new RestTemplate();
+//		
+//		ResponseEntity<ProductDto[]> responseEntity = 
+//			    restTemplate.getForEntity(url, ProductDto[].class); 
+//		
+//		ProductDto[] productDtoArray = responseEntity.getBody();
+//		
+//		return Arrays.stream(productDtoArray).collect(Collectors.toList());
+//	}
+
+	
+	
+	
+	
+}
